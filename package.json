@@ -1,0 +1,28 @@
+{
+	"name": "hybrid-cjs-esm-template",
+	"description": "Template Node.js project utilising TypeScript that generates both CommonJS and ESM node modules.",	
+	"version": "1.0.0",
+	"author": "Paul Welbourne",		
+	"type": "module",
+	"license": "ISC",		
+	"main": "dist/cjs/index.js",
+	"module": "dist/esm/index.js",
+	"exports": {
+		".": {
+			"import": "./dist/esm/index.js",
+			"require": "./dist/cjs/index.js"
+		}
+	},
+	"types": "dist/esm/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"prepublish": "scripts/cleandist && tsc -p tsconfig.json && tsc -p tsconfig-cjs.json && scripts/fixup"		
+	},	
+	"devDependencies": {
+		"@types/node": "17.0.31",
+		"ts-node": "10.7.0",
+		"typescript": "4.6.4"
+	}	
+}

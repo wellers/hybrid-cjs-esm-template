@@ -1,0 +1,1 @@
+Template Node.js project utilising TypeScript that generates both CommonJS and ESM node modules.
